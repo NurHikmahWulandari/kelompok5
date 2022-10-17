@@ -102,14 +102,10 @@ int main(int Argc, char** Argv){
 
  // layar tv
 
-
-
  // tabung tv
-
-
 
  //tabung camera
 
-
+ //kaca kamera
 
  //Yang ini coba coba
