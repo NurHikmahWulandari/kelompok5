@@ -109,3 +109,6 @@ int main(int Argc, char** Argv){
 
 
  //tabung camera
+
+
+ //kaca kamera
