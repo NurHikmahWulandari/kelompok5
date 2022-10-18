@@ -21,6 +21,18 @@
     }
     float _angle = -50.0f;
 
+void tabung() {
+    static int slices = 16;
+    static int stacks = 24;
+    const double t = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
+    const double a = t*90.0;
+
+    glColor3d(0,0,0);
+    glPushMatrix();
+    glTranslated(0,-0.05,0.4);
+    glutSolidTorus(0.2,0.7,slices,stacks);
+    glPopMatrix();
+}
 
 int main(int argc, char** argv) {
      //Initialize GLUT
