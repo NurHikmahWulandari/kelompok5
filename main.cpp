@@ -7,7 +7,7 @@
     //inisialisai 3d
     void initRendering() {
      glEnable(GL_DEPTH_TEST); //sudut pandang
-     glEnable(GL_COLOR_MATERIAL); 
+     glEnable(GL_COLOR_MATERIAL);
      glEnable(GL_LIGHTING); //ighting
      glEnable(GL_LIGHT0); //Enable light
      glEnable(GL_LIGHT1); //Enable light
@@ -103,10 +103,58 @@ void display(){
       glVertex3f(2.0f, 1.0f,  -0.3f); // c
       glVertex3f( 2.0f, -1.0f,  -0.3f); // e
       glVertex3f(-2.0f, -1.0f, -0.3f); // g
-    
-    
+
+    //layar
+     glColor3f(1.0,1.0,1.0);
+     glVertex3f(-0.8f, 0.9f, -0.35f); // b
+     glVertex3f(1.9f, 0.9f,  -0.35f); // c
+     glVertex3f( 1.9f, -0.9f,  -0.35f); // e
+     glVertex3f(-0.8f, -0.9f, -0.35f); // g
+
+     // navigasi
+     glBegin(GL_QUADS);
+     glColor3f(1.0,1.0,1.0);
+     glVertex3f(-1.8f, 0.2f, -0.35f); // b
+     glVertex3f(-1.0f, 0.2f,  -0.35f); // c
+     glVertex3f(-1.0f, -0.5f,  -0.35f); // e
+     glVertex3f(-1.8f, -0.5f, -0.35f); // g
+     glEnd();
+
+
+     //tombol 1
+     glBegin(GL_QUADS);
+     glColor3f(1.0,1.0,1.0);
+     glVertex3f(-1.3f, 0.7f, -0.35f); // b
+     glVertex3f(-1.0f, 0.7f,  -0.35f); // c
+     glVertex3f(-1.0f, 0.5f,  -0.35f); // e
+     glVertex3f(-1.3f, 0.5f, -0.35f); // g
+     glEnd();
+     // tombol 2
+     glBegin(GL_QUADS);
+     glColor3f(1.0,1.0,1.0);
+     glVertex3f(-1.8f, 0.7f, -0.35f); // b
+     glVertex3f(-1.5f, 0.7f,  -0.35f); // c
+     glVertex3f(-1.5f, 0.5f,  -0.35f); // e
+     glVertex3f(-1.8f, 0.5f, -0.35f); // g
+     glEnd();
+     //cekrek
+     glPointSize(17.0);
+     glBegin(GL_POINTS);
+     glColor3f(1.0,1.0,1.0);
+     glVertex3f(-1.4f,0.93f,0.0f);
+     glEnd();
+
       tabung();
       glutSwapBuffers();
+    }
+
+    void update(int value) {
+     _angle += 1.5f;
+     if (_angle > 360) {
+      _angle -= 360;
+     }
+     glutPostRedisplay();
+     glutTimerFunc(25, update, 0);
     }
 
 int main(int argc, char** argv) {
