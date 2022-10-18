@@ -1,7 +1,7 @@
 #include <windows.h>    //#include = prpcessor detective    <windows.h> = file header nya windows utk deklarasi fungsi windows API
 #include <GL/glut.h>    //<GL/glut.h> = deklarasi GLglut
 
-
+// abcdefg
 void garis(){
     glClear(GL_COLOR_BUFFER_BIT);           //bersihkan semua pixel di buffer (bersih layar)
 
@@ -102,10 +102,10 @@ int main(int Argc, char** Argv){
 
  // layar tv
 
-
-
  // tabung tv
 
-
-
  //tabung camera
+
+ //kaca kamera
+
+ //Yang ini coba coba
