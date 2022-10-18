@@ -82,7 +82,6 @@ void display(){
       glVertex3f(-2.0f, -1.0f, -0.3f); // g
       glVertex3f(-2.0f, -1.0f, 0.3f); // h
 
-
       // kanan(lensa)
       glColor3f(0.343f, 0.339f, 0.329f);
       glVertex3f(2.0f, 1.0f,  -0.3f); // c
@@ -120,7 +119,6 @@ void display(){
      glVertex3f(-1.8f, -0.5f, -0.35f); // g
      glEnd();
 
-
      //tombol 1
      glBegin(GL_QUADS);
      glColor3f(1.0,1.0,1.0);
@@ -137,21 +135,22 @@ void display(){
      glVertex3f(-1.5f, 0.5f,  -0.35f); // e
      glVertex3f(-1.8f, 0.5f, -0.35f); // g
      glEnd();
+    
      //cekrek
      glPointSize(17.0);
      glBegin(GL_POINTS);
      glColor3f(1.0,1.0,1.0);
      glVertex3f(-1.4f,0.93f,0.0f);
      glEnd();
-      //lensa bg
-      glBegin(GL_QUADS);
-      glColor3f(0.0f, 0.0f, 0.0f);
-      glVertex3f( -0.6f, 0.5f, 0.32f); // a
-      glVertex3f( 0.6f, 0.5f,  0.32f); // d
-      glVertex3f(0.6f, -0.7f,  0.32f); // f
-      glVertex3f(-0.6f, -0.7f, 0.32f); // h
-      glEnd();
-
+    
+     //lensa bg
+     glBegin(GL_QUADS);
+     glColor3f(0.0f, 0.0f, 0.0f);
+     glVertex3f( -0.6f, 0.5f, 0.32f); // a
+     glVertex3f( 0.6f, 0.5f,  0.32f); // d
+     glVertex3f(0.6f, -0.7f,  0.32f); // f
+     glVertex3f(-0.6f, -0.7f, 0.32f); // h
+     glEnd();
     //lensa
      glBegin(GL_QUADS);
      glColor3f(1.0f, 1.0f, 1.0f);
@@ -161,8 +160,8 @@ void display(){
      glVertex3f(-0.4f, -0.35f, 0.33f); // h
      glEnd();
 
-      tabung();
-      glutSwapBuffers();
+     tabung();
+     glutSwapBuffers();
     }
 
     void update(int value) {
@@ -180,7 +179,7 @@ int main(int argc, char** argv) {
      glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
      glutInitWindowSize(600, 600);
      //Create the window
-     glutCreateWindow("Lighting");
+     glutCreateWindow("3D Kamera - Kelompok 5");
      initRendering();
      //Set handler functions
      glutDisplayFunc(drawScene);
