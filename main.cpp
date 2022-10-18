@@ -119,6 +119,8 @@ void display(){
      glVertex3f(-1.0f, -0.5f,  -0.35f); // e
      glVertex3f(-1.8f, -0.5f, -0.35f); // g
      glEnd();
+
+
      //tombol 1
      glBegin(GL_QUADS);
      glColor3f(1.0,1.0,1.0);
@@ -127,9 +129,27 @@ void display(){
      glVertex3f(-1.0f, 0.5f,  -0.35f); // e
      glVertex3f(-1.3f, 0.5f, -0.35f); // g
      glEnd();
+     // tombol 2
+     glBegin(GL_QUADS);
+     glColor3f(1.0,1.0,1.0);
+     glVertex3f(-1.8f, 0.7f, -0.35f); // b
+     glVertex3f(-1.5f, 0.7f,  -0.35f); // c
+     glVertex3f(-1.5f, 0.5f,  -0.35f); // e
+     glVertex3f(-1.8f, 0.5f, -0.35f); // g
+     glEnd();
+
 
       tabung();
       glutSwapBuffers();
+    }
+
+    void update(int value) {
+     _angle += 1.5f;
+     if (_angle > 360) {
+      _angle -= 360;
+     }
+     glutPostRedisplay();
+     glutTimerFunc(25, update, 0);
     }
 
 int main(int argc, char** argv) {
