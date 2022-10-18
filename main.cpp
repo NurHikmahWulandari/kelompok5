@@ -143,6 +143,23 @@ void display(){
      glColor3f(1.0,1.0,1.0);
      glVertex3f(-1.4f,0.93f,0.0f);
      glEnd();
+      //lensa bg
+      glBegin(GL_QUADS);
+      glColor3f(0.0f, 0.0f, 0.0f);
+      glVertex3f( -0.6f, 0.5f, 0.32f); // a
+      glVertex3f( 0.6f, 0.5f,  0.32f); // d
+      glVertex3f(0.6f, -0.7f,  0.32f); // f
+      glVertex3f(-0.6f, -0.7f, 0.32f); // h
+      glEnd();
+
+    //lensa
+     glBegin(GL_QUADS);
+     glColor3f(1.0f, 1.0f, 1.0f);
+     glVertex3f( -0.4f, 0.3f, 0.33f); // a
+     glVertex3f( 0.4f, 0.3f,  0.33f); // d
+     glVertex3f(0.4f, -0.35f,  0.33f); // f
+     glVertex3f(-0.4f, -0.35f, 0.33f); // h
+     glEnd();
 
       tabung();
       glutSwapBuffers();
