@@ -14,6 +14,12 @@
      glClearColor(1.0,1.0,1.0,1.0);       //bg color
     }
 
+ void handleResize(int w, int h) {
+     glMatrixMode(GL_PROJECTION);
+     glLoadIdentity();
+     gluPerspective(50.0, (double)w / (double)h, 1.0, 200.0);
+    }
+    float _angle = -50.0f;
 
 
 int main(int argc, char** argv) {
