@@ -137,7 +137,12 @@ void display(){
      glVertex3f(-1.5f, 0.5f,  -0.35f); // e
      glVertex3f(-1.8f, 0.5f, -0.35f); // g
      glEnd();
-
+     //cekrek
+     glPointSize(17.0);
+     glBegin(GL_POINTS);
+     glColor3f(1.0,1.0,1.0);
+     glVertex3f(-1.4f,0.93f,0.0f);
+     glEnd();
 
       tabung();
       glutSwapBuffers();
