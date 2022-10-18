@@ -36,6 +36,79 @@ void tabung() {
     glPopMatrix();
 }
 
+void display(){
+     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+     glMatrixMode(GL_MODELVIEW);
+     glLoadIdentity();
+     glTranslatef(0.0f, 0.0f, -14.0f);  //merubah titik tengah sumbu kordinat
+     //Add ambient light
+     GLfloat ambientColor[] = {0.2f, 0.2f, 0.2f, 1.0f}; //Color (0.2, 0.2, 0.2)
+     glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambientColor);
+     //Add positioned light
+     GLfloat lightColor0[] = {0.5f, 0.5f, 0.5f, 1.0f};
+     GLfloat lightPos0[] = {0.0f, -8.0f, 8.0f, 1.0f};
+     glLightfv(GL_LIGHT0, GL_DIFFUSE, lightColor0);
+     glLightfv(GL_LIGHT0, GL_POSITION, lightPos0);
+     //Add directed light
+     GLfloat lightColor1[] = {0.5f, 0.2f, 0.2f, 1.0f};
+     //Coming from the direction (-1, 0.5, 0.5)
+     GLfloat lightPos1[] = {-1.0f, 0.5f, 0.5f, 0.0f};
+     glLightfv(GL_LIGHT1, GL_DIFFUSE, lightColor1);
+     glLightfv(GL_LIGHT1, GL_POSITION, lightPos1);
+     glRotatef(0, 0.0f, 0.0f, 0.0f);
+     glRotatef(0, 0.0f, 0.0f, 1.0f);
+     glRotatef(_angle,0.0f, 1.0f, 0.0f);
+
+     glColor3f(1.1f, 1.1f, 1.1f);
+     glBegin(GL_QUADS);
+     // atas
+      glColor3f(0.343f, 0.339f, 0.329f);
+      glVertex3f( -2.0f, 1.0f, 0.3f); // a
+      glVertex3f(-2.0f, 1.0f, -0.3f); // b
+      glVertex3f(2.0f, 1.0f,  -0.3f); // c
+      glVertex3f( 2.0f, 1.0f,  0.3f); // d
+
+      // bawah
+      glColor3f(0.343f, 0.339f, 0.329f);
+      glVertex3f( 2.0f, -1.0f,  -0.3f); // e
+      glVertex3f(2.0, -1.0f,  0.3f); // f
+      glVertex3f(-2.0f, -1.0f, -0.3f); // g
+      glVertex3f(-2.0f, -1.0f, 0.3f); // h
+
+      // kiri(lensa)
+      glColor3f(0.343f, 0.339f, 0.329f);
+      glVertex3f( -2.0f, 1.0f, 0.3f); // a
+      glVertex3f(-2.0f, 1.0f, -0.3f); // b
+      glVertex3f(-2.0f, -1.0f, -0.3f); // g
+      glVertex3f(-2.0f, -1.0f, 0.3f); // h
+
+
+      // kanan(lensa)
+      glColor3f(0.343f, 0.339f, 0.329f);
+      glVertex3f(2.0f, 1.0f,  -0.3f); // c
+      glVertex3f( 2.0f, 1.0f,  0.3f); // d
+      glVertex3f(2.0, -1.0f,  0.3f); // f
+      glVertex3f( 2.0f, -1.0f,  -0.3f); // e
+
+      // depan (lensa)
+      glColor3f(0.343f, 0.339f, 0.329f);
+      glVertex3f( -2.0f, 1.0f, 0.3f); // a
+      glVertex3f( 2.0f, 1.0f,  0.3f); // d
+      glVertex3f(2.0, -1.0f,  0.3f); // f
+      glVertex3f(-2.0f, -1.0f, 0.3f); // h
+
+      // belakang(layar)
+      glColor3f(0.343f, 0.339f, 0.329f);
+      glVertex3f(-2.0f, 1.0f, -0.3f); // b
+      glVertex3f(2.0f, 1.0f,  -0.3f); // c
+      glVertex3f( 2.0f, -1.0f,  -0.3f); // e
+      glVertex3f(-2.0f, -1.0f, -0.3f); // g
+    
+    
+      tabung();
+      glutSwapBuffers();
+    }
+
 int main(int argc, char** argv) {
      //Initialize GLUT
      glutInit(&argc, argv);
