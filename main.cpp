@@ -1,4 +1,7 @@
+#ifdef _WIN32
 #include <windows.h>    //#include = prpcessor detective    <windows.h> = file header nya windows utk deklarasi fungsi windows API
+#endif
+
 #include <GL/glut.h>    //<GL/glut.h> = deklarasi GLglut
 
 // abcdefg
