@@ -184,5 +184,4 @@ int main(int argc, char** argv) {
      glutMainLoop();
      return 0;
     }
-//hapus
-// tets
+// part_a
